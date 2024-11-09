@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        {% if title %}
+            <title>{{ title }} - ProgressChecker</title>
+        {% else %}
+            <title>Welcome to ProgressChecker</title>
+        {% endif %}
+    </head>
+    <body> 
+        <div> ProgressChecker: <a href="/index">Home</a></div>
+        <hr>
+        {% block content %}{% endblock %}
+    </body>
+</html>

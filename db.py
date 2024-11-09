@@ -1,5 +1,13 @@
-from flask_sqlalchemy import SQLAlchemy
-from app import globaldb
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+def db_init():
+    connection_string = 'mysql://root:000000@127.0.0.1:5000/'
+    engine = create_engine(connection_string, echo=True)
+    Session = sessionmaker(bind=engine)
+    db = Session()
+    return db
 
+db = db_init()
 
-db = globaldb 
+def get_db():
+    return db

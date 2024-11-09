@@ -38,9 +38,7 @@ class Track(Base):
     date : Mapped[datetime] = mapped_column(default=datetime.utcnow) 
 
     habit_completions : Mapped["Habit"] = relationship(back_populates="completions")
-    habit: Mapped["Habit"] = relationship(back_populates="completions")
 
-#user loader, unique identifier keep track of logged in
 # @login.user_loader
 # def load_user(id):
 #     return db.session.get(User,int(id))
